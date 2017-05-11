@@ -1,0 +1,31 @@
+imports:
+  - { resource: "services/form.yml" }
+  - { resource: "services/profiler.yml" }
+
+services:
+  coreshop.context.store.composite:
+    class: CoreShop\Component\Store\Context\CompositeStoreContext
+    public: false
+
+  coreshop.context.store.request_based:
+    class: CoreShop\Component\Store\Context\RequestBased\StoreContext
+    public: false
+    arguments: ['@coreshop.context.store.request_based.resolver', '@request_stack']
+    tags:
+        - { name: coreshop.context.store }
+
+  coreshop.context.store.cached:
+    class: CoreShop\Component\Store\Context\CachedStoreContext
+    tags:
+        - { name: coreshop.context.store }
+
+  coreshop.context.store.request_based.resolver.composite:
+    class: CoreShop\Component\Store\Context\RequestBased\CompositeRequestResolver
+    public: false
+
+  coreshop.context.store.request_based.resolver.hostname_based:
+    class: CoreShop\Component\Store\Context\RequestBased\SiteBasedRequestResolver
+    public: false
+    tags:
+        - { name: coreshop.context.store.request_based.resolver }
+    arguments: ['@coreshop.repository.store']
