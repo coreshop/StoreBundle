@@ -12,19 +12,17 @@
 
 declare(strict_types=1);
 
-namespace CoreShop\Bundle\StoreBundle\Helper;
+namespace CoreShop\Bundle\StoreBundle\Context\Debug;
 
-use Pimcore\Model\Site;
+use Symfony\Component\HttpFoundation\Request;
 
-class PimcoreSiteHelper implements PimcoreSiteHelperInterface
+final class DebugStoreProvider implements DebugStoreProviderInterface
 {
-    public function isSiteRequest(): bool
+    /**
+     * {@inheritdoc}
+     */
+    public function getStoreId(Request $request): ?string
     {
-        return Site::isSiteRequest();
-    }
-
-    public function getCurrentSite(): Site
-    {
-        return Site::getCurrentSite();
+        return $request->query->get('_store_id') ?: $request->cookies->get('_store_id');
     }
 }

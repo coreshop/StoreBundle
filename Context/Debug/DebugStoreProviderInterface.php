@@ -12,19 +12,11 @@
 
 declare(strict_types=1);
 
-namespace CoreShop\Bundle\StoreBundle\Helper;
+namespace CoreShop\Bundle\StoreBundle\Context\Debug;
 
-use Pimcore\Model\Site;
+use Symfony\Component\HttpFoundation\Request;
 
-class PimcoreSiteHelper implements PimcoreSiteHelperInterface
+interface DebugStoreProviderInterface
 {
-    public function isSiteRequest(): bool
-    {
-        return Site::isSiteRequest();
-    }
-
-    public function getCurrentSite(): Site
-    {
-        return Site::getCurrentSite();
-    }
+    public function getStoreId(Request $request): ?string;
 }
