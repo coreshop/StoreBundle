@@ -15,7 +15,7 @@ import { serviceIds } from '@pimcore/studio-ui-bundle/app'
 import { type IconLibrary } from '@pimcore/studio-ui-bundle/modules/icon-library'
 
 // @ts-ignore
-import storeIcon from '../assets/store.svg?react'
+import storeIcon from '../../assets/store.svg?react'
 
 export const StoreBundleIconModule: AbstractModule = {
   onInit(): void {
