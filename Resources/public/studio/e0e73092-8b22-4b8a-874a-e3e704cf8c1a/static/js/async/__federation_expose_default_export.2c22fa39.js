@@ -1,5 +1,5 @@
-/*! For license information please see __federation_expose_default_export.baf4b844.js.LICENSE.txt */
-"use strict";(self["chunk_coreshopstore "]=self["chunk_coreshopstore "]||[]).push([["525"],{7350:function(e,t,a){a.d(t,{u:()=>h});var n=a(2855),l=a(5168),r=a.n(l),i=a(5210),o=a(8421),d=a(5017),s=a(2162),c=a(2696),u=a(199);let p=(0,a(9).rU)(e=>{let{token:t,css:a}=e;return{tree:a`
+/*! For license information please see __federation_expose_default_export.2c22fa39.js.LICENSE.txt */
+"use strict";(self.chunk_coreshopstore=self.chunk_coreshopstore||[]).push([["525"],{7350:function(e,t,a){a.d(t,{u:()=>h});var n=a(2855),l=a(5168),r=a.n(l),i=a(5210),o=a(8421),d=a(5017),s=a(2162),c=a(2696),u=a(199);let p=(0,a(9).rU)(e=>{let{token:t,css:a}=e;return{tree:a`
     padding: ${t.paddingXS}px;
     background: transparent;
 
